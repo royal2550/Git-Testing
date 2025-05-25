@@ -1,4 +1,40 @@
 <!DOCTYPE html>
-<a>Daefdadadaddad
-    dAdaddad
-</a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Changing Button</title>
+  <style>
+    #colorButton {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="colorButton">Click Me!</button>
+
+  <script>
+    const button = document.getElementById("colorButton");
+
+    function getRandomColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+      return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    button.addEventListener("click", () => {
+      button.style.backgroundColor = getRandomColor();
+    });
+  </script>
+
+</body>
+</html>
